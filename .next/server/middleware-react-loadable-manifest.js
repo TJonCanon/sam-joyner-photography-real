@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST='{"../node_modules/@stagewise/toolbar-next/dist/index.js -> @stagewise/toolbar-react":{"id":4897,"files":["static/chunks/748b6817.f5881f97c40aebb9.js","static/chunks/897.fe9b4a729fede944.js"]}}';
+self.__REACT_LOADABLE_MANIFEST="{\"../node_modules/@stagewise/toolbar-next/dist/index.js -> @stagewise/toolbar-react\":{\"id\":\"../node_modules/@stagewise/toolbar-next/dist/index.js -> @stagewise/toolbar-react\",\"files\":[\"static/chunks/_app-pages-browser_node_modules_stagewise_toolbar-react_dist_index_js.js\"]}}"
