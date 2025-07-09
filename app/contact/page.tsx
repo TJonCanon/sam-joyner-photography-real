@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { MailIcon, PhoneIcon, MapPinIcon, CheckIcon } from 'lucide-react';
+import { MailIcon, MapPinIcon, CheckIcon } from 'lucide-react';
 
 const Contact = () => {
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
