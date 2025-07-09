@@ -32,7 +32,7 @@ const Contact = () => {
             CONTACT
           </h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Get in touch with us for print inqueries or other business matters.
+            Get in touch for print inqueries or to discuss my work
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -120,7 +120,14 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-medium mb-1">Location</h3>
-                  <p className="text-gray-600">Located in Tulsa, OK</p>
+                  <p className="text-gray-600">
+                    Tulsa, Oklahoma
+                    <br />
+                    United States
+                  </p>
+                  <p className="text-gray-500 text-sm mt-2">
+                    Represented by M.A. Doran Gallery, Tulsa
+                  </p>
                 </div>
               </div>
             </div>
@@ -128,9 +135,24 @@ const Contact = () => {
         </div>
         {/* Map Section */}
         <div className="mt-16">
-          <div className="bg-gray-200 w-full h-[400px] flex items-center justify-center">
-            <p className="text-gray-500">Map will be embedded here</p>
-            {/* In a real implementation, you would embed a Google Map or similar here */}
+          <div className="w-full h-[400px]">
+            <iframe
+              src="https://www.google.com/maps?q=3509+S+Peoria+Ave+%23180,+Tulsa,+OK+74105&output=embed"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="M.A. Doran Gallery Location - 3509 S Peoria Ave #180, Tulsa, OK 74105"
+            ></iframe>
+          </div>
+          <div className="mt-4 text-center text-gray-600">
+            <p className="text-sm">
+              <strong>M.A. Doran Gallery</strong><br />
+              3509 S Peoria Ave #180<br />
+              Tulsa, OK 74105
+            </p>
           </div>
         </div>
       </div>

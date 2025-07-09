@@ -4,8 +4,8 @@ import Footer from '../src/components/Footer';
 import StagewiseClientToolbar from '../src/components/StagewiseClientToolbar';
 
 export const metadata = {
-  title: 'Robert Smith Photography',
-  description: 'Black and white photography portfolio',
+  title: 'Sam Joyner Photography',
+  description: 'Black and white photography portfolio by Sam Joyner - Fine art photography capturing light, shadow, and timeless moments',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
