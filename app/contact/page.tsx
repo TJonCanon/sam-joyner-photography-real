@@ -1,30 +1,35 @@
 'use client';
 import React, { useState } from 'react';
-import { MailIcon, MapPinIcon, CheckIcon } from 'lucide-react';
+import { MailIcon, MapPinIcon } from 'lucide-react';
 
 const Contact = () => {
-  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [modalOpen, setModalOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
     message: ''
   });
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormStatus('submitting');
-    // Simulate form submission
-    setTimeout(() => {
-      setFormStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 1500);
-  };
+  // Modal close handler
+  const closeModal = () => setModalOpen(false);
+
   return (
-    <div className="w-full bg-white py-16 md:py-24">
+    <div className="w-full bg-white py-16 md:py-24 relative">
+      {/* Modal */}
+      {modalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+          <div className="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm" onClick={closeModal}></div>
+          <div className="relative bg-white rounded-lg shadow-xl p-8 max-w-md w-full mx-4 flex flex-col items-center">
+            <button onClick={closeModal} className="absolute top-4 right-4 text-gray-400 hover:text-black text-2xl font-bold focus:outline-none">&times;</button>
+            <h2 className="text-2xl font-serif mb-4 text-center">Contact Form Coming Soon</h2>
+            <p className="text-gray-600 text-center">We appreciate your interest! Please check back soon to get in touch.</p>
+          </div>
+        </div>
+      )}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Page Header */}
         <div className="text-center mb-12">
@@ -41,54 +46,37 @@ const Contact = () => {
             <h2 className="text-2xl font-serif tracking-wide mb-6">
               SEND A MESSAGE
             </h2>
-            {formStatus === 'success' ? (
-              <div className="bg-green-50 border border-green-200 rounded-md p-6 flex flex-col items-center text-center">
-                <div className="bg-green-100 rounded-full p-2 mb-4">
-                  <CheckIcon className="h-6 w-6 text-green-600" />
-                </div>
-                <h3 className="text-xl font-medium text-green-800 mb-2">
-                  Message Sent Successfully
-                </h3>
-                <p className="text-green-700 mb-4">
-                  Thank you for reaching out. I'll get back to you as soon as possible.
-                </p>
-                <button onClick={() => setFormStatus('idle')} className="px-4 py-2 bg-white border border-green-600 text-green-700 hover:bg-green-50">
-                  Send Another Message
+            <form className="space-y-6" onSubmit={e => { e.preventDefault(); setModalOpen(true); }}>
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                  Name
+                </label>
+                <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} disabled className="w-full px-4 py-2 border border-gray-300 bg-gray-100 text-gray-400 cursor-not-allowed focus:outline-none focus:ring-1 focus:ring-black focus:border-black" />
+              </div>
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                  Email
+                </label>
+                <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} disabled className="w-full px-4 py-2 border border-gray-300 bg-gray-100 text-gray-400 cursor-not-allowed focus:outline-none focus:ring-1 focus:ring-black focus:border-black" />
+              </div>
+              <div>
+                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
+                  Subject
+                </label>
+                <input type="text" id="subject" name="subject" value={formData.subject} onChange={handleChange} disabled className="w-full px-4 py-2 border border-gray-300 bg-gray-100 text-gray-400 cursor-not-allowed focus:outline-none focus:ring-1 focus:ring-black focus:border-black" />
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                  Message
+                </label>
+                <textarea id="message" name="message" value={formData.message} onChange={handleChange} disabled rows={6} className="w-full px-4 py-2 border border-gray-300 bg-gray-100 text-gray-400 cursor-not-allowed focus:outline-none focus:ring-1 focus:ring-black focus:border-black"></textarea>
+              </div>
+              <div>
+                <button type="button" onClick={() => setModalOpen(true)} className="w-full px-6 py-3 bg-black text-white hover:bg-gray-800 transition-colors duration-300 flex justify-center rounded disabled:opacity-75 cursor-not-allowed" disabled>
+                  Coming Soon
                 </button>
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                    Name
-                  </label>
-                  <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required className="w-full px-4 py-2 border border-gray-300 focus:outline-none focus:ring-1 focus:ring-black focus:border-black" />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                    Email
-                  </label>
-                  <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required className="w-full px-4 py-2 border border-gray-300 focus:outline-none focus:ring-1 focus:ring-black focus:border-black" />
-                </div>
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
-                    Subject
-                  </label>
-                  <input type="text" id="subject" name="subject" value={formData.subject} onChange={handleChange} required className="w-full px-4 py-2 border border-gray-300 focus:outline-none focus:ring-1 focus:ring-black focus:border-black" />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                    Message
-                  </label>
-                  <textarea id="message" name="message" value={formData.message} onChange={handleChange} required rows={6} className="w-full px-4 py-2 border border-gray-300 focus:outline-none focus:ring-1 focus:ring-black focus:border-black"></textarea>
-                </div>
-                <div>
-                  <button type="submit" disabled={formStatus === 'submitting'} className={`w-full px-6 py-3 bg-black text-white hover:bg-gray-800 transition-colors duration-300 flex justify-center ${formStatus === 'submitting' ? 'opacity-75 cursor-not-allowed' : ''}`}>
-                    {formStatus === 'submitting' ? 'Sending...' : 'Send Message'}
-                  </button>
-                </div>
-              </form>
-            )}
+            </form>
           </div>
           {/* Contact Information */}
           <div>
