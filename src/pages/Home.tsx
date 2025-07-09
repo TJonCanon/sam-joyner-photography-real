@@ -98,7 +98,7 @@ const Home = () => {
           GET IN TOUCH
         </h2>
         <p className="text-gray-700 max-w-2xl mx-auto mb-8">
-          Interested in purchasing prints or discussing my work? I'd love to hear from you.
+          Interested in purchasing prints or discussing my work? I'd love to hear from.
         </p>
         <Link href="/contact" className="px-6 py-3 bg-black text-white hover:bg-gray-800 transition-colors duration-300">
           CONTACT ME
