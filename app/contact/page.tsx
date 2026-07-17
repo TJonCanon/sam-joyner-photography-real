@@ -90,7 +90,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-medium mb-1">Email</h3>
-                  <p className="text-gray-600">samjoyner@mac.com</p>
+                  <p className="text-gray-600">info@samjoynerestate.com</p>
                 </div>
               </div>
               <div className="flex items-start">
@@ -103,9 +103,6 @@ const Contact = () => {
                     Tulsa, Oklahoma
                     <br />
                     United States
-                  </p>
-                  <p className="text-gray-500 text-sm mt-2">
-                    Represented by M.A. Doran Gallery, Tulsa
                   </p>
                 </div>
               </div>
