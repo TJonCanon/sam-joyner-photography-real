@@ -101,7 +101,7 @@ const Home = () => {
           Interested in purchasing prints or discussing Sam Joyner's work? His Estate would love to hear from.
         </p>
         <Link href="/contact" className="px-6 py-3 bg-black text-white hover:bg-gray-800 transition-colors duration-300">
-          CONTACT ME
+          CONTACT
         </Link>
       </section>
     </div>
