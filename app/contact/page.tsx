@@ -143,8 +143,6 @@ const Contact = () => {
           </div>
           <div className="mt-4 text-center text-gray-600">
             <p className="text-sm">
-              <strong>M.A. Doran Gallery</strong><br />
-              3509 S Peoria Ave #180<br />
               Tulsa, OK 74105
             </p>
           </div>
