@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import Link from 'next/link';
 import ImageGallery from '../../src/components/ImageGallery';
 import { XIcon } from 'lucide-react';
 
@@ -133,9 +134,9 @@ const Works = () => {
                     <p className="text-gray-300 mb-4">
                       Archival pigment print on museum-quality paper. Available in various sizes.
                     </p>
-                    <button className="px-4 py-2 border border-white text-white hover:bg-white hover:text-black transition-colors duration-200">
+                    <Link href="/contact" className="inline-block px-4 py-2 border border-white text-white hover:bg-white hover:text-black transition-colors duration-200">
                       Inquire About This Print
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -147,4 +148,4 @@ const Works = () => {
   );
 };
 
-export default Works; 
+export default Works;
