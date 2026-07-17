@@ -49,7 +49,7 @@ const Contact = () => {
             CONTACT
           </h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Get in touch for print inquiries or to discuss my work
+            Get in touch for print inquiries or to discuss Sam Joyner's work
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
