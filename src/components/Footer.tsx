@@ -12,7 +12,7 @@ const Footer = () => {
               SAM JOYNER
             </Link>
             <p className="text-sm text-gray-500 mt-1">
-              © {currentYear} All Rights Reserved
+              © {currentYear} All Rights Reserved. The Estate of Sam A Joyner III. All rights reserved. This website is the official online archive authorized and maintained by the Trustee of the Sam A Joyner III Estate.
             </p>
           </div>
         </div>
